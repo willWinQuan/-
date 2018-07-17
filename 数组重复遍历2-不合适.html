@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function unique(arr){
+        var newArr =[];
+        for(var j=0;j<arr.length;j++){
+            newArr=[arr[j]];
+         for(var i=0;i<arr.length;i++){
+             console.log(newArr.indexOf(arr[i]));
+            if(newArr.indexOf(arr[i]) >= 2){
+                arr[i].isDouble=true;
+                console.log(i);
+                newArr.push(arr[i]);
+            }
+         }
+        }
+        console.log(newArr);
+
+        return arr;
+    };
+    var array=[{memberName:1,isDouble:false},{memberName:1,isDouble:false},{memberName:2,isDouble:false},{memberName:3,isDouble:false},{memberName:3,isDouble:false}];
+    // var array=[1,1,2,3,1];
+    unique(array);
+    console.log(unique(array));
+</script>
+</body>
+</html>

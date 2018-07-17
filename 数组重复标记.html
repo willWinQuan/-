@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+   function getIsDouble(array,key){
+        var self=this;
+       for(var i=0;i<array.length;i++){
+        for(var j=0;j<array.length;j++){
+            if(array[i][key]==array[j][key] && i != j){
+                array[i].isDouble=true;
+                array[j].isDouble=true;
+            }
+        }
+    };
+      return array;
+    }
+   var array=[{memberName:1,isDouble:false},{memberName:1,isDouble:false},{memberName:2,isDouble:false},{memberName:3,isDouble:false},{memberName:3,isDouble:false}];
+</script>
+</body>
+</html>

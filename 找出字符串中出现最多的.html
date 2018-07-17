@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var testString='dasdaffdaf',
+         testObject={},
+         i,j,k,max=0,maxNumString='';
+         length=testString.length;
+    for(i=0;i<length;i++){
+        var chartString=testString.charAt(i);
+        if(!testObject[chartString]){
+            testObject[chartString]=1;
+            //如果第一次出现该字符串那么testObject[chartString]值是没有赋值的，给初始为1
+        }else {
+            testObject[chartString]++
+        }
+    }
+    //循环结束得出的testObject将是各个字符串的对应出现的次数。
+
+    for(j in testObject){//遍历对象，得出最终max的值为最大的。
+        if(max<testObject[j]){
+            max=testObject[j]
+        }
+    };
+
+    for(k in testObject){//已知max为最大次数，遍历对象，等于max的就是出现次数最多的字符
+        if(max==testObject[k]){
+            maxNumString=k;
+            console.log('次数最多的字符为：'+maxNumString);
+            console.log('次数为：'+max);
+        }
+    };
+
+</script>
+</body>
+</html>

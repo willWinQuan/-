@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .chart-circle-item {
+            display: block;
+            float: left;
+            top: 0%;
+            width: 33.3%;
+            height: 0px;
+            padding-top: 30%;
+        }
+
+        .chart-circle-svg {
+            position: absolute;
+            top: 5%;
+            left: 15%;
+            width: 70%;
+            height: 70%;
+        }
+
+        .chart-circle-bg {
+            fill: none;
+            stroke: #E8E9EE;
+            stroke-width: 2;
+        }
+
+        .chart-circle-step {
+            fill: none;
+            stroke-width: 8;
+            stroke:url(#blue);
+            stroke-dasharray: 0 100000;
+            stroke-linecap: round;
+            transition: stroke-dasharray 0.3s;
+            -webkit-transition: stroke-dasharray 0.3s;
+            -moz-transition: stroke-dasharray 0.3s;
+            -ms-transition: stroke-dasharray 0.3s;
+        }
+
+        .chart-circle-item:nth-of-type(6n+1) .chart-circle-step {
+            stroke:url(#blue);
+        }
+
+        .chart-circle-item:nth-of-type(6n+2) .chart-circle-step {
+            stroke:url(#green);
+        }
+
+        .chart-circle-item:nth-of-type(6n+3) .chart-circle-step {
+            stroke:url(#orange);
+        }
+
+        .chart-circle-item:nth-of-type(6n+4) .chart-circle-step {
+            stroke:url(#blue2);
+        }
+
+        .chart-circle-item:nth-of-type(6n+5) .chart-circle-step {
+            stroke:url(#purple);
+        }
+
+        .chart-circle-item:nth-of-type(6n+6) .chart-circle-step {
+            stroke:url(#purple2);
+        }
+
+        .chart-circle-item-red .chart-circle-step {
+            stroke:url(#orange) !important;
+        }
+
+        .chart-circle-text {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            text-align: center;
+            white-space: nowrap;
+            transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+        }
+
+        .chart-circle-per {
+            font-size: 50px;
+        }
+
+        .chart-circle-per-char {
+            margin-left: -10px;
+            font-size: 24px;
+        }
+
+        .chart-circle-title {
+            color: #909EA9;
+        }
+
+        .chart-circle-title-2 {
+            display: none;
+        }
+
+        /**
+        *chart-circle-item-2 start
+         */
+        .chart-circle-item-2 {
+            top: 5%;
+        }
+
+        .chart-circle-item-2 .chart-circle-svg {
+            transform: rotate(-80deg);
+            -webkit-transform: rotate(-80deg);
+            -moz-transform: rotate(-80deg);
+            -ms-transform: rotate(-80deg);
+        }
+
+        .chart-circle-item-2 .chart-circle-bg {
+            r: calc(40% + 4px);
+        }
+
+        .chart-circle-item-2 .chart-circle-step {
+            filter: none !important;
+        }
+
+        .chart-circle-item-2 .chart-circle-step {
+            stroke-linecap: square;
+        }
+
+        .chart-circle-item-2 .chart-circle-per {
+            font-size: 24px;
+            color: #909EA9;
+        }
+
+        .chart-circle-item-2 .chart-circle-per-char {
+            margin-left: -5px;
+        }
+
+        .chart-circle-item-2 .chart-circle-title {
+            display: none;
+        }
+
+        .chart-circle-item-2 .chart-circle-title-2 {
+            position: absolute;
+            display: block;
+            top: 75%;
+            left: 0px;
+            width: 100%;
+            padding-top: 6px;
+            text-align: center;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+        /**
+        *chart-circle-item-2 end
+         */
+
+        /**
+        *chart-circle-item-3 start
+         */
+        .chart-circle-item-3 {
+            display: inline-block;
+            float: none;
+            vertical-align: middle;
+        }
+
+        .chart-circle-item-3 .chart-circle-svg {
+            top: 0%;
+            left: 0%;
+            width: 90%;
+            height: 90%;
+        }
+
+        .chart-circle-item-3 .chart-circle-text {
+            position: absolute;
+            top: 44%;
+            left: 46%;
+        }
+
+        .chart-circle-item-3 .chart-circle-per {
+            font-size: 12px;
+        }
+
+        .chart-circle-item-3 .chart-circle-per-char {
+            margin-left: -4px;
+            font-size: 12px;
+        }
+
+        .chart-circle-item-3 .chart-circle-title {
+            display: none;
+        }
+
+        .chart-circle-item-3 .chart-circle-step {
+            stroke-width: 2;
+        }
+        /**
+        *chart-circle-item-3 end
+         */
+    </style>
+</head>
+<body>
+<svg class="chart-circle-svg">
+    <circle class="chart-circle-bg"   cx="50%" cy="50%" r="40%"></circle>
+    <circle class="chart-circle-step" cx="50%" cy="50%" r="40%" style="filter:url(#Gaussian_Blur);opacity: 0.5"></circle>
+    <circle class="chart-circle-step" cx="50%" cy="50%" r="40%"></circle>
+
+    <defs>
+        <linearGradient id="blue" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:RGB(65,209,234);stop-opacity:1"></stop>
+            <stop offset="100%" style="stop-color:RGB(70,221,209);stop-opacity:1"></stop>
+        </linearGradient>
+        <linearGradient id="green" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:RGB(143,214,95);stop-opacity:1"></stop>
+            <stop offset="100%" style="stop-color:RGB(113,216,144);stop-opacity:1"></stop>
+        </linearGradient>
+        <linearGradient id="orange" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:RGB(255,182,83);stop-opacity:1"></stop>
+            <stop offset="100%" style="stop-color:RGB(253,146,96);stop-opacity:1"></stop>
+        </linearGradient>
+        <linearGradient id="blue2" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:RGB(96,176,238);stop-opacity:1"></stop>
+            <stop offset="100%" style="stop-color:RGB(96,176,238);stop-opacity:1"></stop>
+        </linearGradient>
+        <linearGradient id="purple" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:RGB(161,155,241);stop-opacity:1"></stop>
+            <stop offset="100%" style="stop-color:RGB(161,155,241);stop-opacity:1"></stop>
+        </linearGradient>
+        <linearGradient id="purple2" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:RGB(191,83,232);stop-opacity:1"></stop>
+            <stop offset="100%" style="stop-color:RGB(191,83,232);stop-opacity:1"></stop>
+        </linearGradient>
+        <filter id="Gaussian_Blur">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="10" />
+        </filter>
+    </defs>
+</svg>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    //年月日转时间戳
+    function get_unix_time(dateStr)
+    {
+        dateStr = dateStr.replace('年','-');
+        dateStr = dateStr.replace('月','-');
+        dateStr = dateStr.replace('日','-');
+        var newstr = dateStr.replace(/-/g,'/');
+        var date =  new Date(newstr);
+        var time_str = date.getTime().toString();
+        return time_str.substr(0, 10);
+    }
+    var time='2018年04月17日';
+    console.log(get_unix_time(time));
+</script>
+</body>
+</html>

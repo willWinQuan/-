@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+   <script>
+       function isRepeat(arr){
+
+           var hash = {};
+
+           for(var i in arr) {
+
+               if(hash[arr[i].memberName]){
+                   // hash[arr[i].isDouble] = true;
+                   arr[i].isDouble=true;
+               }
+
+           }
+
+           return arr;
+
+       };
+
+       // var array=[1,2,3,4];
+       var array=[{memberName:1,isDouble:false},{memberName:1,isDouble:false},{memberName:2,isDouble:false},{memberName:3,isDouble:false},{memberName:3,isDouble:false}];
+       isRepeat(array);
+       console.log(isRepeat(array));
+   </script>
+</body>
+</html>
