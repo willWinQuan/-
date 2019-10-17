@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>运费模板</title>
+    <link rel="stylesheet" href="css/iview.css">
+    <link rel="stylesheet" href="css/common.css">
+
+
+</head>
+<body>
+    <section id="app" class="warp">
+        <i-Button type="primary" class="mr5" size="large" icon="md-add">新建模板</i-Button>
+        <div class="disFlex_between mt20">
+            <div class="disFlex">
+                <div class="label">按条件：</div>
+                <i-select v-model="templateType" class="mr5" style="width:200px; ">
+                    <i-option v-for="item in templateList" :value="item.value" :key="item.value">{{ item.label }}</i-option>
+                </i-select>
+                <i-input placeholder="请输入关键字" class="mr10" ></i-input>
+                <i-Button type="primary" class="mr5">查 询</i-Button>
+                <i-Button>重 置</i-Button>
+            </div>
+        </div>
+        <i-table class="mt20" border :columns="columns" :data="data">
+            <template slot-scope="{ row, index }" slot="action">
+                <div class="disFlex">
+                    <i-switch size="large"  class="mr5">
+                        <span slot="open">启用</span>
+                        <span slot="close">冻结</span>
+                    </i-switch>
+                    <Dropdown placement="bottom-start">
+                        <i-button size="small">
+                            更多
+                            <Icon type="ios-arrow-down"></Icon>
+                        </i-button>
+                        <i-dropdown-menu slot="list">
+                            <dropdown-item>查看</dropdown-item>
+                            <dropdown-item>编辑</dropdown-item>
+                            <dropdown-item>删除</dropdown-item>
+                        </i-dropdown-menu>
+                    </Dropdown>
+                </div>
+
+            </template>
+        </i-table>
+
+        <Page :total="40" size="small" show-elevator show-sizer  show-total class="mt20 alignRight"/>
+    </section>
+</body>
+<script src="js/vue.min.js"></script>
+<script src="js/iview.min.js"></script>
+<script src="template/template.js"></script>
+
+<script src="js/freightTemplate.js"></script>
+
+</html>

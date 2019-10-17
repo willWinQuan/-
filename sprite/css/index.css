@@ -1,0 +1,25 @@
+/*reset*/
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td{padding: 0; font-family: "Microsoft YaHei" ;margin: 0; box-sizing: border-box;  -webkit-text-size-adjust: none;-webkit-appearance: none;  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
+table{border-collapse: collapse; border-spacing: 0;}
+fieldset, img{border: 0;}
+address, caption, cite, code, dfn, em, strong, th, var{font-weight: normal; font-style: normal;}
+ol, ul{list-style: none;}
+caption, th{text-align: left;}
+a{ text-decoration: none;}
+h1, h2, h3, h4, h5, h6{font-weight: normal; font-size: 100%;}
+q:before, q:after{content: '';}
+abbr, acronym{border: 0;}
+
+.cf:after,
+.cf:before{ content: ''; display: table; }
+.cf:after{ clear: both; }
+.cf{ zoom:1; font-family: "Microsoft YaHei" }
+.fl{float: left; display: inline;}
+.fr{float: right; display: inline;}
+.dis_none{ display: none;}
+body{background:#eff2f5; }
+input{ width: 100px; height: 30px; border: solid 2px #1abc9c ; padding: 5px; box-sizing: border-box;border-radius: 3px; outline: none; color: #1abc9c; font-size: 12px; }
+#input2{ width: 50px;}
+#btn{ width: 50px; text-align: center; background:#1abc9c; margin-left: 10px; height: 30px; border-radius: 3px; line-height: 30px; display: inline-block; color: #fff; cursor: pointer; font-size: 12px; }
+.box{ width: 100%;text-align: center; margin: 20px auto;  position: absolute}
+

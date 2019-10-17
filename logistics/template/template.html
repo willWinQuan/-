@@ -1,0 +1,41 @@
+<!--操作模板-->
+<template id="ctrlTab">
+    <div class="mAuto">
+        操作
+        <Poptip placement="bottom" style="margin-left:10px;">
+            <icon type="ios-eye" style="font-size:20px;cursor:pointer"></icon>
+            <div slot="content">
+                <div class="columnsChecked">
+                    <Checkbox v-for="item in columnsData" :value="item.isShow==1" :label="item.label"
+                              @on-change="changeColumns($event,item.id)">{{item.title}}
+                    </Checkbox>
+                </div>
+            </div>
+        </Poptip>
+    </div>
+</template>
+
+<!--运费模板-->
+<template id="freightRule">
+    <div>
+        <i-table :columns="columns" :data="data">
+            <template slot-scope="{ row, index }" slot="action">
+                <i-input></i-input>
+            </template>
+        </i-table>
+        <i-button type="primary" @click="handleSubmit('formValidate')" icon="md-add" class="mt10">新增</i-button>
+    </div>
+</template>
+
+<!--地区选择模板-->
+<template id="chooseCity">
+    <div class="chooseCityBox ">
+        <div class="left">
+            <Tree :data="cityList" show-checkbox></Tree>
+        </div>
+        <div class="right">
+            已选（省市区）
+        </div>
+    </div>
+</template>
+

@@ -1,0 +1,10 @@
+https://howlerjs.com/
+
+https://github.com/goldfire/howler.js#documentation
+
+var sound = new Howl({
+  src: ['sound.mp3']
+});
+
+
+sound.play();

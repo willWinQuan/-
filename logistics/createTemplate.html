@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/iview.css">
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+<section id="app" class="warp">
+    <i-form ref="formValidate" :model="formValidate" :rules="ruleValidate" :label-width="120">
+        <form-item label="模板名称" prop="name">
+            <i-input v-model="formValidate.name" placeholder="请为您的模板取个名字"></i-input>
+        </form-item>
+
+        <form-item label="物流服务商" prop="city">
+            <i-select v-model="formValidate.city" placeholder="i-select your city">
+                <i-option value="">请选择</i-option>
+                <i-option value="shanghai">London</i-option>
+                <i-option value="shenzhen">Sydney</i-option>
+            </i-select>
+        </form-item>
+
+        <form-item label="发货地址" prop="city">
+            <i-select v-model="formValidate.city" placeholder="i-select your city">
+                <i-option value="">请选择</i-option>
+                <i-option value="shanghai">London</i-option>
+                <i-option value="shenzhen">Sydney</i-option>
+            </i-select>
+        </form-item>
+
+        <form-item label="计价类型" prop="gender">
+            <RadioGroup v-model="formValidate.gender">
+                <Radio label="male">按重量</Radio>
+                <Radio label="female">按件数</Radio>
+                <Radio label="female">按体积</Radio>
+            </RadioGroup>
+        </form-item>
+
+        <form-item label="运费规则" prop="gender">
+            <freight-rule v-model="formValidate.rule"></freight-rule>
+        </form-item>
+
+        <form-item label="包邮类型" prop="gender">
+            <RadioGroup v-model="formValidate.gender">
+                <Radio label="male">不包邮</Radio>
+                <Radio label="female">按条件包邮</Radio>
+            </RadioGroup>
+            <div class="labelTips">包邮之后，用户将不再承担运费，由运营方承担</div>
+        </form-item>
+        <form-item label="包邮承担方" prop="gender">
+            <RadioGroup v-model="formValidate.gender">
+                <Radio label="male">官方</Radio>
+                <Radio label="female">商户</Radio>
+                <Radio label="female">品牌</Radio>
+            </RadioGroup>
+        </form-item>
+
+
+        <form-item label="保价类型" prop="gender">
+            <RadioGroup v-model="formValidate.gender">
+                <Radio label="male">不保价</Radio>
+                <Radio label="female">按条件保价</Radio>
+            </RadioGroup>
+            <div class="labelTips">无论是否包邮，保价费用都是由运营方承担。保价是否生效，还需要匹配商品的基础属性，是否开启了保价</div>
+        </form-item>
+        <form-item label="保价承担方" prop="gender">
+            <RadioGroup v-model="formValidate.gender">
+                <Radio label="male">官方</Radio>
+                <Radio label="female">商户</Radio>
+                <Radio label="female">品牌</Radio>
+            </RadioGroup>
+        </form-item>
+
+        <form-item>
+            <i-button type="primary" @click="handleSubmit('formValidate')">保存并返回</i-button>
+            <i-button @click="handleReset('formValidate')" style="margin-left: 8px">取消</i-button>
+        </form-item>
+    </i-form>
+
+    <Modal v-model="modal.chooseCity" title="地区选择" width="800" >
+            <choose-city></choose-city>
+    </Modal>
+
+</section>
+
+
+
+<script src="js/vue.min.js"></script>
+<script src="js/iview.min.js"></script>
+<script src="js/cityList.js"></script>
+
+<include src="template/template.html"></include>
+<script src="template/template.js"></script>
+
+<script src="js/createTemplate.js"></script>
+
+
+</body>
+
+
+
+
+
+
+
+</html>
