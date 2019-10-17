@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+       .fade-enter-active, .fade-leave-active {
+          transition: opacity .5s;
+        }
+        .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+          opacity: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="components-demo" v-cloak>
+      <transition-group name="fade">
+       <alert-box key="alertBox">
+          <div slot="slotDemo1">
+            id:{{alertData.id}}<br/>
+            content:{{alertData.content}}
+          </div>
+          <div slot="slotDemo2">
+            id:{{alertData.id}}<br/>
+            content:{{alertData.content}}<br/>
+            22342
+          </div>
+       </alert-box>
+      </transition-group>
+    </div>
+    
+    <!-- <script src="./vue.js"></script> -->
+    <script>
+        import Vue from './vue.js';
+        console.log(Vue)
+        Vue.component('alert-box', {
+            template: 
+            '<div class="demo-alert-box">'+
+                '<strong>插槽测试!</strong>'+
+                '<slot name="slotDemo1"></slot>'+
+                '<div>===========这是分割线==========</div>'+
+                '<slot name="slotDemo2"></slot>'+
+            '</div>'
+        })
+        new Vue({
+          el:"#components-demo",
+          data:{
+            alertData:{
+              id:1,
+              content:"666"
+            }
+          }
+        })
+    </script>
+</body>
+</html>

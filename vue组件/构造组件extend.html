@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    
+    <script src="./vue.js"></script>
+    <script src="./jquery.min.js"></script>
+    <script>
+        //组件构造
+        var component1=function(id,site,vm){
+            Vue.nextTick().then(function(){
+                $("#"+id)[site]('<div id="component1"></div>');
+            }).then(function(){
+                var Component=Vue.extend({
+                    data:function(){
+                        return {b:vm.a}
+                    },
+                    template:"<div>id:{{b.id}}</div>"
+                })
+                new Component().$mount('#component1');
+            })
+        }
+    </script>
+    <script>
+      $(function(){
+        var vm=new Vue({
+            el:"#app",
+            data:{a:Vue.observable({id:1})}
+        })
+        //组件加载
+        new component1("app",'append',vm);
+        setTimeout(function(){
+            vm.a.id=2
+        },3000)
+      }) 
+    </script>
+</body>
+</html>

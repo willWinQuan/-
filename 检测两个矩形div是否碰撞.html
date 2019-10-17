@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="div1" onclick="getFn(event,'div1')">获取div1-event</button>
+    <button id="div2" style="position: absolute;left: 100px;" onclick="getFn(event,'div2')">获取div2-event</button>
+    <button onclick="Fn3()" style="position: absolute;left: 250px;">检测是否碰撞</button>
+   <script>
+
+       var div_1=document.getElementById("div1"),
+           div_2=document.getElementById("div2");
+        var data={
+            div1:"",
+            div2:""
+        }
+        function getFn(e,node){
+            console.log(e)
+            data[node]=e
+        }
+        function Fn3(){
+            var isFlag=isOverlap(data.div1,data.div2);
+            console.log(isFlag)
+        }
+       /**
+			两个div矩形区域碰撞检测函数，优化后的算法可以检测包含关系，两个参数为jQuery对象
+		 */
+		function isOverlap(objOne, objTwo) {
+            console.log(objOne);
+            console.log(objTwo);
+            var zx=Math.abs(
+                objOne.target.offsetLeft*2+objOne.target.offsetWidth-
+                (objTwo.target.offsetLeft*2+objTwo.target.offsetWidth)
+            );
+            var x=objOne.target.offsetWidth+objTwo.target.offsetWidth;
+            var zy=Math.abs(objOne.target.offsetTop*2+objOne.target.offsetHeight-(objTwo.target.offsetTop*2+objTwo.target.offsetHeight))
+            var y=objOne.target.offsetHeight+objTwo.target.offsetHeight;
+			return (zx <= x && zy <= y);
+        }
+    </script>
+</body>
+</html>
