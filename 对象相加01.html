@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+     class fn1{
+      constructor(a,b){
+        this.a=a?a:0
+        this.b=b?b:0
+        this.add(a+b);
+      }
+      add(newB){
+        return this.a+newB
+      }
+    }
+
+    var a= new fn1(100);
+    var b=new fn1(false,75);
+    var c=a.add(b);
+    var d=new fn1(a+b);
+    console.log(a)
+    console.log(b)
+    console.log(c);
+    console.log(d);
+  </script>
+</body>
+</html>
+
+

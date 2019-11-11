@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      class newFn{
+        constructor(a){
+          if(!(a instanceof newFn)){
+            if(a.toString() === "[object Object][object Object]"){
+               var a_array=a.split("][")
+               var a1=JSON.parse(JSON.stringify(a_array[0]+"]"))
+               var a2=JSON.parse(JSON.stringify('['+a_array[1]))
+               console.log(a1)
+               return this.a=a1.a+a2.a
+            }
+            return this.a=a
+          }else{
+            return this.b=JSON.parse(JSON.stringify(a))
+          }
+        }
+        add(a){
+         if(a instanceof newFn){
+            
+         }
+        }
+      }
+      var a=new newFn(6)
+      var b=new newFn(7)
+      console.log(new newFn(a+b))
+      
+    </script>
+</body>
+</html>
